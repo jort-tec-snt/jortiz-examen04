@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Clientes</h2>
+
+<a href="/clientes/nuevo/" class="btn btn-primary mb-3">Nuevo Cliente</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Nombre</th>
+        <th>Documento</th>
+    </tr>
+
+    {% for c in object_list %}
+    <tr>
+        <td>{{ c.nombre }}</td>
+        <td>{{ c.documento }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Facturas</h2>
+
+<a href="/facturas/nuevo/" class="btn btn-primary mb-3">Nueva Factura</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Número</th>
+        <th>Cliente</th>
+        <th>Monto</th>
+    </tr>
+
+    {% for f in object_list %}
+    <tr>
+        <td>{{ f.numero }}</td>
+        <td>{{ f.cliente.nombre }}</td>
+        <td>{{ f.monto }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
